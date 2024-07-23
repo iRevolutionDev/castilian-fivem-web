@@ -16,7 +16,7 @@
 # production
 /build
 
-# misc
+# exploits
 .DS_Store
 *.pem
 
