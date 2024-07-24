@@ -3,11 +3,13 @@ import { Navbar } from "@/components/drawer";
 import { useWindowSize } from "@/hooks/use-window-size";
 import { Box } from "@mui/material";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 import { type ReactNode, useRef } from "react";
 
 export default function CheatWindow({
 	children,
 }: Readonly<{ children: ReactNode }>) {
+	const pathname = usePathname();
 	const containerRef = useRef<HTMLDivElement>(null);
 	const { width, height } = useWindowSize();
 
@@ -43,7 +45,25 @@ export default function CheatWindow({
 				<div className="relative h-full w-full flex-col">
 					<Navbar>
 						<Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-							{children}
+							<motion.div
+								key={pathname}
+								initial={{
+									opacity: 0,
+									y: 20,
+								}}
+								animate={{
+									opacity: 1,
+									y: 0,
+								}}
+								exit={{
+									opacity: 0,
+									y: 20,
+								}}
+								transition={{ duration: 0.3 }}
+								className="w-full h-full"
+							>
+								{children}
+							</motion.div>
 						</Box>
 					</Navbar>
 				</div>
