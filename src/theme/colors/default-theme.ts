@@ -9,4 +9,13 @@ export const defaultTheme = createTheme({
 			default: "transparent",
 		},
 	},
+	components: {
+		MuiCard: {
+			styleOverrides: {
+				root: {
+					borderRadius: "1rem",
+				},
+			},
+		},
+	},
 });

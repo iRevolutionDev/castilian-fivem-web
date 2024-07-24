@@ -1,7 +1,14 @@
 "use client";
+import { store } from "@/redux/store";
 
 export async function fetchDuiEvent<T>(type: string, payload?: T) {
-	const response = await fetch("https://menu/castilian", {
+	const resourceName = store.getState().resourceManager.resourceName;
+
+	if (!resourceName) {
+		throw new Error("Resource name is not set");
+	}
+
+	const response = await fetch(`https://${resourceName}/castilian`, {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",

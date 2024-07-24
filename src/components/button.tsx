@@ -3,15 +3,15 @@ import { Box, Button as MuiButton } from "@mui/material";
 import type { FC, PropsWithChildren } from "react";
 
 type ButtonProps = {
-	onClick: string;
+	event: string;
 };
 
 export const Button: FC<PropsWithChildren<ButtonProps>> = ({
 	children,
-	onClick,
+	event,
 }) => {
-	const handleClick = () => {
-		fetchDuiEvent(onClick);
+	const handleClick = async () => {
+		await fetchDuiEvent("action", { action: event });
 	};
 
 	return (
