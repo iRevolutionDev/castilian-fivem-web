@@ -19,6 +19,7 @@ import {
 	styled,
 } from "@mui/material";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { type FC, type PropsWithChildren, useState } from "react";
 
 const drawerWidth = 240;
@@ -81,6 +82,7 @@ const Drawer = styled(MuiDrawer, {
 }));
 
 export const Navbar: FC<PropsWithChildren> = ({ children }) => {
+	const pathname = usePathname();
 	const [open, setOpen] = useState(false);
 
 	const toggleDrawer = () => {
@@ -115,6 +117,7 @@ export const Navbar: FC<PropsWithChildren> = ({ children }) => {
 								key={route.name}
 								component={Link}
 								href={route.path}
+								selected={route.path === pathname}
 							>
 								<ListItemIcon>{route.icon}</ListItemIcon>
 								<ListItemText primary={route.name} />
@@ -132,7 +135,15 @@ export const Navbar: FC<PropsWithChildren> = ({ children }) => {
 							</ListItemIcon>
 							<ListItemText primary="Revolution" secondary="Developer" />
 						</ListItem>
-						<ListItemButton component={Link} href="/cheat/settings">
+						<ListItemButton
+							sx={{
+								paddingLeft: "24px",
+								paddingRight: "24px",
+							}}
+							component={Link}
+							href="/cheat/settings"
+							selected={pathname === "/cheat/settings"}
+						>
 							<ListItemIcon>
 								<Settings />
 							</ListItemIcon>
