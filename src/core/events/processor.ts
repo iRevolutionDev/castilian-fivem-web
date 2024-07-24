@@ -2,7 +2,11 @@ import type {
 	InitializeEventPayload,
 	PushNotificationEventPayload,
 } from "@/@types/events-payload";
-import { setResourceName } from "@/redux/features/resource-manager-slice";
+import {
+	setLoading,
+	setPercentage,
+	setResourceName,
+} from "@/redux/features/resource-manager-slice";
 import { store } from "@/redux/store";
 import { fetchDuiEvent } from "@/utils/fetch-dui-event";
 import { enqueueSnackbar } from "notistack";
@@ -20,6 +24,8 @@ export const processEvent = async (event: unknown) => {
 		case "initialize": {
 			const { resourceName } = payload as InitializeEventPayload;
 			dispatch(setResourceName(resourceName));
+			dispatch(setLoading(false));
+			dispatch(setPercentage(100));
 			await fetchDuiEvent("initialized", payload);
 			break;
 		}

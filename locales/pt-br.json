@@ -1,4 +1,19 @@
 {
+	"loading": {
+		"title": {
+			"communicating": "Comunicando com o servidor",
+			"loading": "Carregando dados",
+			"processing": "Processando dados"
+		},
+		"message": "Por favor, aguarde enquanto nos comunicamos com o servidor, carregamos e processamos os dados.",
+		"progress": {
+			"components": "Carregando componentes..."
+		},
+		"error": {
+			"title": "Error",
+			"message": "An error occurred while communicating with the server. Please try again later."
+		}
+	},
 	"vehicles": {
 		"title": "Veículos"
 	},
