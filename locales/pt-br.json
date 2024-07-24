@@ -1,4 +1,7 @@
 {
+	"vehicles": {
+		"title": "Veículos"
+	},
 	"settings": {
 		"language": {
 			"title": "Idioma",

@@ -16,6 +16,6 @@ export const ROUTES: Route[] = [
 	{
 		name: "Exploits",
 		icon: <Code fontSize="large" />,
-		path: "/cheat/exploits",
+		path: "/cheat/vehicles",
 	},
 ];
