@@ -1,6 +1,11 @@
+import type {
+	InitializeEventPayload,
+	PushNotificationEventPayload,
+} from "@/@types/events-payload";
 import { setResourceName } from "@/redux/features/resource-manager-slice";
 import { store } from "@/redux/store";
 import { fetchDuiEvent } from "@/utils/fetch-dui-event";
+import { enqueueSnackbar } from "notistack";
 
 type Event = {
 	type: string;
@@ -13,10 +18,14 @@ export const processEvent = async (event: unknown) => {
 
 	switch (type) {
 		case "initialize": {
-			const { resourceName } = payload as { resourceName: string };
+			const { resourceName } = payload as InitializeEventPayload;
 			dispatch(setResourceName(resourceName));
-			console.log("Resource name set:", resourceName);
 			await fetchDuiEvent("initialized", payload);
+			break;
+		}
+		case "pushNotification": {
+			const { message, type } = payload as PushNotificationEventPayload;
+			enqueueSnackbar(message, { variant: type });
 			break;
 		}
 		default:
