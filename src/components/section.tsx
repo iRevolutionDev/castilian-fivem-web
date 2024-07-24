@@ -5,10 +5,13 @@ type ContainerProps = {
 	title: string;
 };
 
-const Container: FC<PropsWithChildren<ContainerProps>> = ({ children }) => {
+const Container: FC<PropsWithChildren<ContainerProps>> = ({
+	children,
+	title,
+}) => {
 	return (
 		<Card>
-			<CardHeader title="Player" />
+			<CardHeader title={title} />
 			<CardContent className="flex flex-col gap-2">{children}</CardContent>
 		</Card>
 	);
