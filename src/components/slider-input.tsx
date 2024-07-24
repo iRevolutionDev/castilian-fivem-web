@@ -10,6 +10,7 @@ type SliderInputProps = {
 };
 
 export const SliderInput: FC<SliderInputProps> = ({ label, action }) => {
+	const [disabled, setDisabled] = useState<boolean>(false);
 	const [inputAction, setInputAction] = useState<InputAction>();
 
 	const sendChange = async (value: number) => {
@@ -22,9 +23,13 @@ export const SliderInput: FC<SliderInputProps> = ({ label, action }) => {
 	useEffect(() => {
 		fetchDuiEvent("getInputAction", {
 			action,
-		}).then((response) => {
-			setInputAction(response);
-		});
+		})
+			.then((response) => {
+				setInputAction(response);
+			})
+			.catch(() => {
+				setDisabled(true);
+			});
 	}, [action]);
 
 	return (
@@ -34,7 +39,7 @@ export const SliderInput: FC<SliderInputProps> = ({ label, action }) => {
 			justifyContent="space-between"
 			spacing={2}
 		>
-			<Typography textAlign="center" variant="body1">
+			<Typography className="max-w-4xl" variant="body1">
 				{label}
 			</Typography>
 			<Slider
@@ -43,10 +48,11 @@ export const SliderInput: FC<SliderInputProps> = ({ label, action }) => {
 				}}
 				aria-label={label}
 				valueLabelDisplay="auto"
-				value={inputAction?.value ?? 0}
+				value={(inputAction?.value as number) ?? 0}
 				min={inputAction?.minValue}
 				max={inputAction?.maxValue}
 				step={inputAction?.step}
+				disabled={disabled}
 				onChange={async (_, value) => {
 					setInputAction((prev) => ({
 						...prev,

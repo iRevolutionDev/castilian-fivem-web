@@ -14,6 +14,28 @@
 			"message": "An error occurred while communicating with the server. Please try again later."
 		}
 	},
+	"player": {
+		"title": "Player",
+		"sections": {
+			"modifiers": {
+				"title": "Modifiers",
+				"fields": {
+					"health": "Health",
+					"armour": "Armour",
+					"velocity_multiplier": "Velocity Multiplier",
+					"run_multiplier": "Run Multiplier"
+				}
+			},
+			"wide": {
+				"title": "Wide",
+				"fields": {
+					"god_mode": "God Mode",
+					"invisible": "Invisible",
+					"locally_visible": "Locally Visible"
+				}
+			}
+		}
+	},
 	"vehicles": {
 		"title": "Vehicles"
 	},

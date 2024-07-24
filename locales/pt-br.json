@@ -14,6 +14,28 @@
 			"message": "An error occurred while communicating with the server. Please try again later."
 		}
 	},
+	"player": {
+		"title": "Jogador",
+		"sections": {
+			"modifiers": {
+				"title": "Modificadores",
+				"fields": {
+					"health": "Vida",
+					"armour": "Colete",
+					"velocity_multiplier": "Multiplicador de Velocidade",
+					"run_multiplier": "Multiplicador de Corrida"
+				}
+			},
+			"wide": {
+				"title": "Wide",
+				"fields": {
+					"god_mode": "Imortal",
+					"invisible": "Invisível",
+					"locally_visible": "Localmente Visível"
+				}
+			}
+		}
+	},
 	"vehicles": {
 		"title": "Veículos"
 	},
