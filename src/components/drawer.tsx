@@ -1,9 +1,12 @@
 import { ROUTES } from "@/constants/routes";
-import { Menu } from "@mui/icons-material";
+import { Menu, Settings } from "@mui/icons-material";
 import {
+	Avatar,
 	type CSSObject,
+	Divider,
 	IconButton,
 	List,
+	ListItem,
 	ListItemButton,
 	ListItemIcon,
 	ListItemText,
@@ -106,14 +109,36 @@ export const Navbar: FC<PropsWithChildren> = ({ children }) => {
 			</AppBar>
 			<div className="flex flex-row h-full">
 				<Drawer variant="permanent" open={open}>
-					{ROUTES.map((route) => (
-						<List key={route.name}>
-							<ListItemButton component={Link} href={route.path}>
+					<List>
+						{ROUTES.map((route) => (
+							<ListItemButton
+								key={route.name}
+								component={Link}
+								href={route.path}
+							>
 								<ListItemIcon>{route.icon}</ListItemIcon>
 								<ListItemText primary={route.name} />
 							</ListItemButton>
-						</List>
-					))}
+						))}
+					</List>
+					<List sx={{ marginTop: "auto" }}>
+						<Divider />
+						<ListItem>
+							<ListItemIcon>
+								<Avatar
+									alt="Revolution"
+									src="https://avatars.githubusercontent.com/u/34239493"
+								/>
+							</ListItemIcon>
+							<ListItemText primary="Revolution" secondary="Developer" />
+						</ListItem>
+						<ListItemButton component={Link} href="/cheat/settings">
+							<ListItemIcon>
+								<Settings />
+							</ListItemIcon>
+							<ListItemText primary="Settings" />
+						</ListItemButton>
+					</List>
 				</Drawer>
 				{children}
 			</div>

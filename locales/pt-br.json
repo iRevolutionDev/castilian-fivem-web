@@ -1,0 +1,16 @@
+{
+	"settings": {
+		"language": {
+			"title": "Idioma",
+			"description": "Selecione seu idioma preferido"
+		},
+		"theme": {
+			"title": "Tema",
+			"description": "Selecione seu tema preferido"
+		}
+	},
+	"language": {
+		"en": "Inglês",
+		"pt-br": "Português (Brasil)"
+	}
+}

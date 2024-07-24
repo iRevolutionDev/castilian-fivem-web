@@ -1,3 +1,4 @@
+"use client";
 import { store } from "@/redux/store";
 import ThemeRegistry from "@/theme/theme-registry";
 import type { FC, PropsWithChildren } from "react";

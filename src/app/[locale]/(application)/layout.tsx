@@ -1,14 +1,10 @@
 "use client";
-import "./globals.css";
 import { processEvent } from "@/core/events/processor";
-import { Providers } from "@/providers/providers";
 import { type ReactNode, useEffect } from "react";
 
-export default function RootLayout({
+export default function ApplicationLayout({
 	children,
-}: Readonly<{
-	children: ReactNode;
-}>) {
+}: Readonly<{ children: ReactNode }>) {
 	useEffect(() => {
 		const handleEvent = (event: MessageEvent) => {
 			const { data } = event;
@@ -24,11 +20,5 @@ export default function RootLayout({
 		};
 	}, []);
 
-	return (
-		<html lang="en">
-			<body>
-				<Providers>{children}</Providers>
-			</body>
-		</html>
-	);
+	return <>{children}</>;
 }
