@@ -18,6 +18,7 @@ import {
 	Typography,
 	styled,
 } from "@mui/material";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { type FC, type PropsWithChildren, useState } from "react";
@@ -82,6 +83,7 @@ const Drawer = styled(MuiDrawer, {
 }));
 
 export const Navbar: FC<PropsWithChildren> = ({ children }) => {
+	const t = useTranslations();
 	const pathname = usePathname();
 	const [open, setOpen] = useState(false);
 
@@ -120,7 +122,7 @@ export const Navbar: FC<PropsWithChildren> = ({ children }) => {
 								selected={route.path === pathname}
 							>
 								<ListItemIcon>{route.icon}</ListItemIcon>
-								<ListItemText primary={route.name} />
+								<ListItemText primary={t(route.name as never)} />
 							</ListItemButton>
 						))}
 					</List>

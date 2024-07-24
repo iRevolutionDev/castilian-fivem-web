@@ -1,4 +1,4 @@
-import { Code, DirectionsRun } from "@mui/icons-material";
+import { DirectionsCar, DirectionsRun } from "@mui/icons-material";
 import type { ReactElement } from "react";
 
 type Route = {
@@ -9,13 +9,13 @@ type Route = {
 
 export const ROUTES: Route[] = [
 	{
-		name: "Player",
+		name: "player.title",
 		icon: <DirectionsRun fontSize="large" />,
 		path: "/cheat/player",
 	},
 	{
-		name: "Exploits",
-		icon: <Code fontSize="large" />,
+		name: "vehicles.title",
+		icon: <DirectionsCar fontSize="large" />,
 		path: "/cheat/vehicles",
 	},
 ];
