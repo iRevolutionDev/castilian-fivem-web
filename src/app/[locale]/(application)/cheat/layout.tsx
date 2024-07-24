@@ -1,17 +1,25 @@
 "use client";
 import { Navbar } from "@/components/drawer";
-import { useWindowSize } from "@/hooks/use-window-size";
 import { Box } from "@mui/material";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { type ReactNode, useRef } from "react";
+import { type ReactNode, useEffect, useRef, useState } from "react";
 
 export default function CheatWindow({
 	children,
 }: Readonly<{ children: ReactNode }>) {
 	const pathname = usePathname();
 	const containerRef = useRef<HTMLDivElement>(null);
-	const { width, height } = useWindowSize();
+	const [position, setPosition] = useState({ x: 0, y: 0 });
+
+	useEffect(() => {
+		if (!containerRef.current) return;
+
+		setPosition({
+			x: window.innerWidth / 2 - 640,
+			y: window.innerHeight / 2 - 360,
+		});
+	}, []);
 
 	return (
 		<div className="h-screen overflow-hidden" ref={containerRef}>
@@ -25,8 +33,8 @@ export default function CheatWindow({
 					boxShadow: 24,
 				}}
 				style={{
-					top: (height - 720) / 2,
-					left: (width - 1280) / 2,
+					left: position.x,
+					top: position.y,
 				}}
 				className="text-white overflow-hidden rounded-3xl"
 				drag
