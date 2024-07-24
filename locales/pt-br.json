@@ -6,7 +6,12 @@
 		},
 		"theme": {
 			"title": "Tema",
-			"description": "Selecione seu tema preferido"
+			"description": "Selecione seu tema preferido",
+			"options": {
+				"light": "Claro",
+				"dark": "Escuro",
+				"system": "Sistema"
+			}
 		}
 	},
 	"language": {

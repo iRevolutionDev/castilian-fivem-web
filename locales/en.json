@@ -6,7 +6,12 @@
 		},
 		"theme": {
 			"title": "Theme",
-			"description": "Select your preferred theme"
+			"description": "Select your preferred theme",
+			"options": {
+				"light": "Light",
+				"dark": "Dark",
+				"system": "System"
+			}
 		}
 	},
 	"language": {
