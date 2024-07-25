@@ -21,7 +21,7 @@ export default async function RootLayout({
 
 	return (
 		<html lang={locale}>
-			<body>
+			<body className="overflow-hidden">
 				<NextIntlClientProvider messages={messages}>
 					<Providers>{children}</Providers>
 				</NextIntlClientProvider>

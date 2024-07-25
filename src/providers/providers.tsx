@@ -7,7 +7,13 @@ import { Provider } from "react-redux";
 
 export const Providers: FC<PropsWithChildren> = ({ children }) => {
 	return (
-		<SnackbarProvider maxSnack={3}>
+		<SnackbarProvider
+			maxSnack={3}
+			anchorOrigin={{
+				vertical: "top",
+				horizontal: "right",
+			}}
+		>
 			<Provider store={store}>
 				<ThemeRegistry>{children}</ThemeRegistry>
 			</Provider>

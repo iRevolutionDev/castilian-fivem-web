@@ -37,7 +37,20 @@
 		}
 	},
 	"vehicles": {
-		"title": "Vehicles"
+		"title": "Vehicle",
+		"sections": {
+			"general": {
+				"title": "General",
+				"fields": {
+					"repair": "Repair Vehicle",
+					"flip": "Flip Vehicle",
+					"clean": "Clean Vehicle",
+					"gravity": "Vehicle Gravity",
+					"boost": "Boost Vehicle",
+					"nearby_unlock": "Unlock Nearby Vehicles"
+				}
+			}
+		}
 	},
 	"settings": {
 		"language": {

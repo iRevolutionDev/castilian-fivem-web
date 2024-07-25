@@ -37,7 +37,19 @@
 		}
 	},
 	"vehicles": {
-		"title": "Veículos"
+		"title": "Veículo",
+		"sections": {
+			"general": {
+				"title": "Geral",
+				"fields": {
+					"repair": "Reparar Veículo",
+					"flip": "Virar Veículo",
+					"clean": "Limpar Veículo",
+					"gravity": "Gravidade do Veículo",
+					"boost": "Boost Vehicle"
+				}
+			}
+		}
 	},
 	"settings": {
 		"language": {
