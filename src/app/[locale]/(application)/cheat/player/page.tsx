@@ -40,6 +40,13 @@ export default function PlayerPage() {
 					</Switch>
 				)}
 			</Section.Container>
+			<Section.Container title={t("sections.noclip.title")}>
+				<Switch action="noclip">{t("sections.noclip.fields.noclip")}</Switch>
+				<SliderInput
+					label={t("sections.noclip.fields.noclip_speed")}
+					action="noclip_speed"
+				/>
+			</Section.Container>
 		</Section.Root>
 	);
 }

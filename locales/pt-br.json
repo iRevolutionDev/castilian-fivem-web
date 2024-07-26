@@ -33,6 +33,13 @@
 					"invisible": "Invisível",
 					"locally_visible": "Localmente Visível"
 				}
+			},
+			"noclip": {
+				"title": "Noclip",
+				"fields": {
+					"noclip": "Noclip",
+					"noclip_speed": "Velocidade do Noclip"
+				}
 			}
 		}
 	},
