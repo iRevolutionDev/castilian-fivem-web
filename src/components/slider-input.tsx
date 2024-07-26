@@ -30,6 +30,21 @@ export const SliderInput: FC<SliderInputProps> = ({ label, action }) => {
 			.catch(() => {
 				setDisabled(true);
 			});
+
+		const listener = (event: MessageEvent) => {
+			const { type, payload } = event.data;
+
+			if (type !== "setInputAction") return;
+
+			if (payload.action !== action) return;
+
+			setInputAction(payload);
+		};
+
+		window.addEventListener("message", listener);
+		return () => {
+			window.removeEventListener("message", listener);
+		};
 	}, [action]);
 
 	return (
