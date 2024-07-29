@@ -86,5 +86,9 @@
 	"language": {
 		"en": "Inglês",
 		"pt-br": "Português (Brasil)"
+	},
+	"notification": {
+		"not_in_vehicle": "Você não está em um veículo",
+		"no_vehicle_nearby": "Não há veículos próximos"
 	}
 }

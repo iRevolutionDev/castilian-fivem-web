@@ -1,7 +1,4 @@
-import type {
-	InitializeEventPayload,
-	PushNotificationEventPayload,
-} from "@/@types/events-payload";
+import type { InitializeEventPayload } from "@/@types/events-payload";
 import { setOpenedMenu } from "@/redux/features/menu-slice";
 import {
 	setLoading,
@@ -10,7 +7,6 @@ import {
 } from "@/redux/features/resource-manager-slice";
 import { store } from "@/redux/store";
 import { fetchDuiEvent } from "@/utils/fetch-dui-event";
-import { enqueueSnackbar } from "notistack";
 
 type Event = {
 	type: string;
@@ -28,11 +24,6 @@ export const processEvent = async (event: unknown) => {
 			dispatch(setLoading(false));
 			dispatch(setPercentage(100));
 			await fetchDuiEvent("initialized", payload);
-			break;
-		}
-		case "pushNotification": {
-			const { message, type } = payload as PushNotificationEventPayload;
-			enqueueSnackbar(message, { variant: type });
 			break;
 		}
 		case "toggleMenu": {
