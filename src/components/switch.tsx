@@ -59,7 +59,7 @@ export const Switch: FC<PropsWithChildren<SwitchProps>> = ({
 		return () => {
 			window.removeEventListener("message", listener);
 		};
-	}, [action]);
+	}, [onChanged, action]);
 
 	const checked = inputAction?.value ?? false;
 
