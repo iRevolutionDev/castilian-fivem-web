@@ -19,7 +19,7 @@ const Container: FC<PropsWithChildren<ContainerProps>> = ({
 
 const Root: FC<PropsWithChildren> = ({ children }) => {
 	return (
-		<div className="h-full @container">
+		<div className="h-full @container overflow-y-auto">
 			<div className="grid grid-cols-2 gap-4">{children}</div>
 		</div>
 	);
