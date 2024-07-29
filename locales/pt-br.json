@@ -53,7 +53,8 @@
 					"flip": "Virar Veículo",
 					"clean": "Limpar Veículo",
 					"gravity": "Gravidade do Veículo",
-					"boost": "Boost Vehicle"
+					"boost": "Boost Vehicle",
+					"nearby_unlock": "Desbloquear Veículos Próximos"
 				}
 			}
 		}
