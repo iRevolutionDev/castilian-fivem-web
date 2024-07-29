@@ -1,5 +1,6 @@
 "use client";
 import type { Theme } from "@/@types/theme";
+import { KeyBind } from "@/components/key-bind";
 import { useTheme } from "@/hooks/use-theme";
 import { type Locale, locales } from "@/i18n/i18n.config";
 import { List, ListItem, ListItemText, MenuItem, Select } from "@mui/material";
@@ -21,6 +22,13 @@ export default function MiscPage() {
 	return (
 		<div className="h-full">
 			<List>
+				<ListItem>
+					<ListItemText
+						primary={tSettings("menu_key.title")}
+						secondary={tSettings("menu_key.description")}
+					/>
+					<KeyBind action="menu" />
+				</ListItem>
 				<ListItem>
 					<ListItemText
 						primary={tSettings("language.title")}

@@ -58,7 +58,16 @@
 			}
 		}
 	},
+	"keybinding": {
+		"default": {
+			"description": "Clique para definir uma nova tecla"
+		}
+	},
 	"settings": {
+		"menu_key": {
+			"title": "Tecla do Menu",
+			"description": "Pressione a tecla que você deseja usar para abrir o menu"
+		},
 		"language": {
 			"title": "Idioma",
 			"description": "Selecione seu idioma preferido"

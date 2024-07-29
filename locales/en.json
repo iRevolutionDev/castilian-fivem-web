@@ -59,7 +59,16 @@
 			}
 		}
 	},
+	"keybinding": {
+		"default": {
+			"description": "Click to set a new keybind"
+		}
+	},
 	"settings": {
+		"menu_key": {
+			"title": "Menu Key",
+			"description": "Select the key to open the menu"
+		},
 		"language": {
 			"title": "Language",
 			"description": "Select your preferred language"
