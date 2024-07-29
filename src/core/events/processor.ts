@@ -2,6 +2,7 @@ import type {
 	InitializeEventPayload,
 	PushNotificationEventPayload,
 } from "@/@types/events-payload";
+import { setOpenedMenu } from "@/redux/features/menu-slice";
 import {
 	setLoading,
 	setPercentage,
@@ -32,6 +33,11 @@ export const processEvent = async (event: unknown) => {
 		case "pushNotification": {
 			const { message, type } = payload as PushNotificationEventPayload;
 			enqueueSnackbar(message, { variant: type });
+			break;
+		}
+		case "toggleMenu": {
+			const { opened } = payload as { opened: boolean };
+			dispatch(setOpenedMenu(opened));
 			break;
 		}
 		default:

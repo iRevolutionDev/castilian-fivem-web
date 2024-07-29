@@ -1,3 +1,4 @@
+import { menuReducer } from "@/redux/features/menu-slice";
 import { resourceReducer } from "@/redux/features/resource-manager-slice";
 import { themeReducer } from "@/redux/features/theme-slice";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
@@ -6,6 +7,7 @@ import { setupListeners } from "@reduxjs/toolkit/query";
 export const rootReducers = combineReducers({
 	theme: themeReducer,
 	resourceManager: resourceReducer,
+	menu: menuReducer,
 });
 
 export const store = configureStore({

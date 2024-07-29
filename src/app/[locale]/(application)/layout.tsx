@@ -20,5 +20,5 @@ export default function ApplicationLayout({
 		};
 	}, []);
 
-	return <>{children}</>;
+	return <div className="h-screen overflow-hidden">{children}</div>;
 }
